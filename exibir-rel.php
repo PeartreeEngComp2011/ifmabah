@@ -1,5 +1,7 @@
 <?php
 // Primeiro código PHP
+include("relat1.php");
+
 function obterResultadosDoPrimeiroCodigo($nome_servidor, $mes) 
 {
     $mysqli = new mysqli("localhost", "root", "", "ifmabah");
@@ -82,6 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
     echo "</tbody>";
     echo "</table>";
+    echo "<br><br>";
 }
 ?>
 

@@ -35,8 +35,8 @@
         </select>
 
         <input type="submit" value="Pesquisar"><br><br>
-
-        <a href="inicial.php">Voltar à Tela Inicial</a>
     </form>
+
+   
 </body>
 </html>
