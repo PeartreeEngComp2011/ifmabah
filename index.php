@@ -1,15 +1,27 @@
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Frequência do Servidor</title>
+    <style>
+        .btn 
+        {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <h1>Formulário de Frequência do Servidor</h1>
     
     <!-- Formulário de Seleção de Mês e Ano -->
-    <form id="selecaoForm">
+    <form action="form_segundo.php" method="post">
         <label for="nome_servidor">Nome do Servidor:</label>
         <input type="text" name="nome_servidor" id="nome_servidor" required>
         <br><br>
@@ -42,23 +54,35 @@
             ?>
         </select>
         <br><br>
+
+        <label for="setor">Setor:</label>
+        <select name="setor" id="setor" required>
+            <option value="cae">CAE</option>
+            <option value="de">CAPI</option>
+            <option value="ceof">CEOF</option>
+            <option value="cgp">CGP</option>
+            <option value="clcc">CLCC</option>
+            <option value="ctic">CTIC</option>
+            <option value="dap">DAP</option>
+            <option value="dde">DDE</option>
+            <option value="de">DE</option>
+            <option value="de">DERI</option>
+        </select>
+        <br><br>
+
+        <label for="dat">Entrada em exercício:</label>
+        <input type="date" id="dat" name="dat">
+        <br><br>
+
+        <label for="frequencia">Upload da Frequência do Servidor:</label>
+        <input type="file" name="frequencia" id="frequencia" required>
+        <br><br>
         
-        <input type="submit" value="Selecionar">
+        <input type="submit" name="enviar" value="Enviar">
+        <input type="reset" value="Limpar Campo"><br><br>
+
+        <a href="inicial.php" class="btn">Voltar à Tela Inicial</a>
     </form>
 
-    <script>
-    // JavaScript para redirecionar o usuário com base nas seleções de mês e ano
-    document.getElementById("selecaoForm").addEventListener("submit", function(event) 
-    {
-        event.preventDefault(); // Impede o envio padrão do formulário
-        
-        var nomeServidor = document.getElementById("nome_servidor").value;
-        var mesSelecionado = document.getElementById("mes").value;
-        var anoSelecionado = document.getElementById("ano").value;
-        
-        // Redireciona o usuário para o segundo formulário com as seleções
-        window.location.href = "form_segundo.php?nome_servidor=" + encodeURIComponent(nomeServidor) + "&mes=" + encodeURIComponent(mesSelecionado) + "&ano=" + encodeURIComponent(anoSelecionado);
-    });
-    </script>
 </body>
 </html>
